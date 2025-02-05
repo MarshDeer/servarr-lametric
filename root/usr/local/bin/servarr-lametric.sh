@@ -27,28 +27,28 @@ case "$app" in
 		;;
 esac
 
-notifSound='letter_email'
+sound='letter_email'
 case "$event_type" in
 	'Grab')
-	notifText="Grabbed $target"
+	text="Grabbed $target"
 	;;
 	'Download')
 	if [ "${sonarr_isupgrade:-$radarr_isupgrade}" = 'True' ]; then
-		notifText="Upgraded ${target}"
+		text="Upgraded ${target}"
 	else
-		notifText="Imported ${target}"
+		text="Imported ${target}"
 	fi
 	;;
 	'HealthIssue')
-		notifText="$health_issue"
-		notifSound='negative3'
+		text="$health_issue"
+		sound='negative3'
 	;;
 	'ManualInteractionRequired')
-		notifText="Manual interaction required for $target"
-		notifSound='negative3'
+		text="Manual interaction required for $target"
+		sound='negative3'
 	;;
 	'Test')
-		notifText="Test successful!"
+		text="Test successful!"
 	;;
 	*)
 		>&2 echo "Error: Unsupported event type"
@@ -66,12 +66,12 @@ curl \
 			\"frames\": [
 				{
 					\"icon\":\"$icon\",
-					\"text\":\"$notifText\"
+					\"text\":\"$text\"
 				}
 			],
 			\"sound\": {
 				\"category\":\"notifications\",
-				\"id\":\"$notifSound\",
+				\"id\":\"$sound\",
 				\"repeat\":1
 			}
 		}
