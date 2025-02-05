@@ -1,11 +1,10 @@
 #!/bin/sh
-app=$(printenv | sed -n 's/_eventtype *=.*$//p')
-
 if [ -z "$LAMETRIC_API" ] || [ -z "$LAMETRIC_IP" ]; then
 	>&2 echo "Error: 'LAMETRIC_API' and/or 'LAMETRIC_IP' are unset!"
 	exit 1
 fi
 
+app=$(printenv | sed -n 's/_eventtype *=.*$//p')
 case "$app" in
 	'sonarr')
 		icon='3345'
