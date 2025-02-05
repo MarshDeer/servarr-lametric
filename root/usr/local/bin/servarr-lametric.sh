@@ -10,9 +10,9 @@ case "$app" in
 	'sonarr')
 		icon='3345'
 		event_type=$sonarr_eventtype
-		season_number="${sonarr_release_seasonnumber:-$sonarr_episodefile_seasonnumber}"
-		episode_numbers="${sonarr_release_episodenumbers:-$sonarr_episodefile_episodenumbers}"
-		target="$sonarr_series_title S${season_number}E${episode_numbers}"
+		season_number="S${sonarr_release_seasonnumber:-$sonarr_episodefile_seasonnumber}"
+		episode_numbers="E${sonarr_release_episodenumbers:-$sonarr_episodefile_episodenumbers}"
+		target="$media_title ${season_number}${episode_numbers}"
 		health_issue=$sonarr_health_issue_message
 		;;
 	'radarr')
@@ -39,10 +39,13 @@ case "$event_type" in
 	fi
 	;;
 	'HealthIssue')
-	notifText="$health_issue"
+		notifText="$health_issue"
+	;;
+	'ManualInteractionRequired')
+		notifText="Manual interaction required for $target"
 	;;
 	'Test')
-	notifText="Test successful!"
+		notifText="Test successful!"
 	;;
 	*)
 		>&2 echo "Error: Unsupported event type"
