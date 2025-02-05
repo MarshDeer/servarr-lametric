@@ -30,15 +30,15 @@ esac
 sound='letter_email'
 case "$event_type" in
 	'Grab')
-	text="Grabbed $target"
-	;;
+		text="Grabbed $target"
+		;;
 	'Download')
-	if [ "${sonarr_isupgrade:-$radarr_isupgrade}" = 'True' ]; then
-		text="Upgraded ${target}"
-	else
-		text="Imported ${target}"
-	fi
-	;;
+		if [ "${sonarr_isupgrade:-$radarr_isupgrade}" = 'True' ]; then
+			text="Upgraded ${target}"
+		else
+			text="Imported ${target}"
+		fi
+		;;
 	'HealthIssue')
 		text="$health_issue"
 		sound='negative3'
