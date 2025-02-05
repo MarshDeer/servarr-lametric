@@ -27,6 +27,7 @@ case "$app" in
 		;;
 esac
 
+notifSound='letter_email'
 case "$event_type" in
 	'Grab')
 	notifText="Grabbed $target"
@@ -40,9 +41,11 @@ case "$event_type" in
 	;;
 	'HealthIssue')
 		notifText="$health_issue"
+		notifSound='negative3'
 	;;
 	'ManualInteractionRequired')
 		notifText="Manual interaction required for $target"
+		notifSound='negative3'
 	;;
 	'Test')
 		notifText="Test successful!"
@@ -51,11 +54,6 @@ case "$event_type" in
 		>&2 echo "Error: Unsupported event type"
 	;;
 esac
-
-notifSound='letter_email'
-if [ "$event_type" = 'HealthIssue' ]; then
-	notifSound='negative3'
-fi
 
 curl \
 	--silent \
