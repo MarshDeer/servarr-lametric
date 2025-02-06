@@ -23,7 +23,7 @@ case "$app" in
 	'readarr')
 		icon='66049'
 		event_type=$readarr_eventtype
-		book_title=${readarr_release_title:-$readarr_book_title}
+		book_title=${readarr_release_booktitles:-$readarr_book_title}
 		target="$readarr_author_name - $book_title"
 		health_issue="$readarr_health_issue_message"
 		;;
