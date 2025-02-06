@@ -15,7 +15,7 @@ Application | Supported
 ----------- | ---------
 Sonarr      |     ✅
 Radarr      |     ✅
-Readarr     |     ❌
+Readarr     |     ✅
 Lidarr      |     ❌
 Whisparr    |     ❌
 Prowlarr    |     ❌

@@ -20,6 +20,13 @@ case "$app" in
 		target="$radarr_movie_title \($radarr_movie_year\)"
 		health_issue=$radarr_health_issue_message
 		;;
+	'readarr')
+		icon='66049'
+		event_type=$readarr_eventtype
+		book_title=${readarr_release_title:-$readarr_book_title}
+		target="$readarr_author_name - $book_title"
+		health_issue="$readarr_health_issue_message"
+		;;
 	*)
 		>&2 echo 'Error: Script must be run from either Sonarr or Radarr'
 		exit 1
