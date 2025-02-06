@@ -1,7 +1,7 @@
 # servarr-lametric
 
 <div align=center>
-<img src='assets/demo.gif'>
+<img src='.assets/demo.gif'>
 </div>
 
 ## About
