@@ -1,7 +1,9 @@
 # servarr-lametric
+
 <div align=center>
-![Demo](./assets/demo.gif)
+<img src='assets/demo.gif'>
 </div>
+
 ## About
 
 servarr-lametric is a [Docker Mod](https://github.com/linuxserver/docker-mods) designed for the LinuxServer.io Docker containers for the *Arr suite of applications. It uses the apps' 'Custom Script' connection to send various notifications to a LaMetric TIME device in your local network.
