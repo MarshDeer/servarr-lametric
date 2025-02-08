@@ -11,7 +11,7 @@ case "$app" in
 		event_type=$sonarr_eventtype
 		season_number="S${sonarr_release_seasonnumber:-$sonarr_episodefile_seasonnumber}"
 		episode_numbers="E${sonarr_release_episodenumbers:-$sonarr_episodefile_episodenumbers}"
-		target="$media_title ${season_number}${episode_numbers}"
+		target="$sonarr_series_title ${season_number}${episode_numbers}"
 		health_issue=$sonarr_health_issue_message
 		;;
 	'radarr')
