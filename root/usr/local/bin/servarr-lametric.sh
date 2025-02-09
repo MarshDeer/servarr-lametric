@@ -28,7 +28,7 @@ case "$app" in
 		health_issue="$readarr_health_issue_message"
 		;;
 	*)
-		>&2 echo 'Error: Script must be run from either Sonarr or Radarr'
+		>&2 echo 'Error: Script must be run from a compatible app'
 		exit 1
 		;;
 esac
