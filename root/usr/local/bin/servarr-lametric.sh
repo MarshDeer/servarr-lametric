@@ -27,6 +27,13 @@ case "$app" in
 		target="$readarr_author_name - $book_title"
 		health_issue="$readarr_health_issue_message"
 		;;
+	'lidarr')
+		icon='66048'
+		event_type=$lidarr_eventtype
+		album_title="${lidarr_release_albumtitles:-$lidarr_album_title}"
+		target="$lidarr_artist_name - $album_title"
+		health_issue=$lidarr_health_issue_message
+		;;
 	*)
 		>&2 echo 'Error: Script must be run from a compatible app'
 		exit 1
@@ -35,25 +42,25 @@ esac
 
 sound='letter_email'
 case "$event_type" in
-	'Grab')
+	Grab)
 		text="Grabbed $target"
 		;;
-	'Download')
+	*Download)
 		if [ "${sonarr_isupgrade:-$radarr_isupgrade}" = 'True' ]; then
 			text="Upgraded ${target}"
 		else
 			text="Imported ${target}"
 		fi
 		;;
-	'HealthIssue')
+	HealthIssue)
 		text="$health_issue"
 		sound='negative3'
 	;;
-	'ManualInteractionRequired')
+	ManualInteractionRequired)
 		text="Manual interaction required for $target"
 		sound='negative3'
 	;;
-	'Test')
+	Test)
 		text="Test successful!"
 	;;
 	*)
