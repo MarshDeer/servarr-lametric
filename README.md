@@ -26,7 +26,7 @@ Prowlarr    |     ❌
 
 1. Set up your container with all the settings using your preferred method.
   
-2. Add the `DOCKER_MODS=ghcr.io/marshdeer/servarr-lametric:latest`, `LAMETRIC_API=LAMETRIC_API_KEY` and `LAMETRIC_IP=LAMETRIC_IP>` environment variables to your desired container.
+2. Add the `DOCKER_MODS=ghcr.io/marshdeer/servarr-lametric:main`, `LAMETRIC_API=LAMETRIC_API_KEY` and `LAMETRIC_IP=LAMETRIC_IP>` environment variables to your desired container.
    
     - <details>
       <summary>Docker Compose example</summary>
@@ -40,7 +40,7 @@ Prowlarr    |     ❌
             - PUID=1000
             - PGID=1000
             - TZ=Antarctica/South_Pole
-            - DOCKER_MODS=ghcr.io/marshdeer/servarr-lametric:latest
+            - DOCKER_MODS=ghcr.io/marshdeer/servarr-lametric:main
             - LAMETRIC_API=LAMETRIC_API_KEY
             - LAMETRIC_IP=LAMETRIC_IP
           volumes:
@@ -63,7 +63,7 @@ Prowlarr    |     ❌
          -e PUID=1000 \
          -e PGID=1000 \
          -e TZ=Antarctica/South_Pole \
-         -e DOCKER_MODS=ghcr.io/marshdeer/servarr-lametric:latest \
+         -e DOCKER_MODS=ghcr.io/marshdeer/servarr-lametric:main \
          -e LAMETRIC_API=LAMETRIC_API_KEY \
          -e LAMETRIC_IP=LAMETRIC_IP \
          -p 7878:7878 \
