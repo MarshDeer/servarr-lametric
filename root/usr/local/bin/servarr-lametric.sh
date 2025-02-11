@@ -8,36 +8,36 @@ app=$(printenv | sed -n 's/_eventtype *=.*$//p')
 case "$app" in
 	'sonarr')
 		icon='66050'
-		event_type=$sonarr_eventtype
+		event_type="$sonarr_eventtype"
 		season_number="S${sonarr_release_seasonnumber:-$sonarr_episodefile_seasonnumber}"
 		episode_numbers="E${sonarr_release_episodenumbers:-$sonarr_episodefile_episodenumbers}"
 		target="$sonarr_series_title ${season_number}${episode_numbers}"
-		health_issue=$sonarr_health_issue_message
+		health_issue="$sonarr_health_issue_message"
 		;;
 	'radarr')
 		icon='65972'
-		event_type=$radarr_eventtype
+		event_type="$radarr_eventtype"
 		target="$radarr_movie_title \($radarr_movie_year\)"
-		health_issue=$radarr_health_issue_message
+		health_issue="$radarr_health_issue_message"
 		;;
 	'readarr')
 		icon='66049'
-		event_type=$readarr_eventtype
-		book_title=${readarr_release_booktitles:-$readarr_book_title}
+		event_type="$readarr_eventtype"
+		book_title="${readarr_release_booktitles:-$readarr_book_title}"
 		target="$readarr_author_name - $book_title"
 		health_issue="$readarr_health_issue_message"
 		;;
 	'lidarr')
 		icon='66048'
-		event_type=$lidarr_eventtype
+		event_type="$lidarr_eventtype"
 		album_title="${lidarr_release_albumtitles:-$lidarr_album_title}"
 		target="$lidarr_artist_name - $album_title"
-		health_issue=$lidarr_health_issue_message
+		health_issue="$lidarr_health_issue_message"
 		;;
 	'prowlarr')
 		icon='66052'
-		event_type=$prowlarr_eventtype
-		health_issue=$prowlarr_health_issue_message
+		event_type="$prowlarr_eventtype"
+		health_issue="$prowlarr_health_issue_message"
 		;;
 	*)
 		>&2 echo 'Error: Script must be run from a compatible app'
