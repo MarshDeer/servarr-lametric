@@ -34,6 +34,11 @@ case "$app" in
 		target="$lidarr_artist_name - $album_title"
 		health_issue=$lidarr_health_issue_message
 		;;
+	'prowlarr')
+		icon='66052'
+		event_type=$prowlarr_eventtype
+		health_issue=$prowlarr_health_issue_message
+		;;
 	*)
 		>&2 echo 'Error: Script must be run from a compatible app'
 		exit 1

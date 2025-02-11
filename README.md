@@ -18,7 +18,7 @@ Radarr      |     ✅
 Readarr     |     ✅
 Lidarr      |     ✅
 Whisparr    |     ❌
-Prowlarr    |     ❌
+Prowlarr    |     ✅
 
 ## Installation
 
