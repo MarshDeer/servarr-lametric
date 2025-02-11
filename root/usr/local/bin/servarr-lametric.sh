@@ -7,7 +7,7 @@ fi
 app=$(printenv | sed -n 's/_eventtype *=.*$//p')
 case "$app" in
 	'sonarr')
-		icon='3345'
+		icon='66050'
 		event_type=$sonarr_eventtype
 		season_number="S${sonarr_release_seasonnumber:-$sonarr_episodefile_seasonnumber}"
 		episode_numbers="E${sonarr_release_episodenumbers:-$sonarr_episodefile_episodenumbers}"
